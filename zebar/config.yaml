@@ -98,7 +98,7 @@ window/bar:
       --spotify: var(--rp-love);
       --glazewm-other: var(--rp-pine);
       --weather: var(--rp-gold);
-      --clock: var(--rp-text);
+      --clock: var(--rp-rose);
     }
 
     @keyframes flash {
@@ -451,5 +451,5 @@ window/bar:
         margin: 10px;
         color: var(--clock);
       template: |
-        <i class="nf nf-fa-clock"></i>
-        {{ date.toFormat(date.now, 't') }}
+        <i class="ti ti-clock"></i>
+        {{ date.toFormat(date.now, 'T') }}
