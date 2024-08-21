@@ -131,6 +131,7 @@ window/bar:
     font-size: 14px;
     font-weight: 400;
 
+
   group/left:
     styles: |
       display: flex;
@@ -379,7 +380,6 @@ window/bar:
 
         .binding-mode,
         .tiling-direction {
-          padding: 4px 6px;
           margin: 0;
         }
 
@@ -447,9 +447,43 @@ window/bar:
     template/clock:
       providers: ["date"]
       styles: |
-        padding-right: 6px;
-        margin: 10px;
         color: var(--clock);
+
+
+        .time {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          transform: translateY(0%);
+          opacity: 1;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .date {
+          display: flex;
+          align-items: center;
+          transform: translateY(-100%);
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        &:hover {
+          .time {
+            transform: translateY(200%);
+            opacity: 0;
+          }
+          .date {
+            transform: translateY(0%);
+            opacity: 1;
+          }
+        }
+       # Available date tokens: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
       template: |
-        <i class="ti ti-clock"></i>
-        {{ date.toFormat(date.now, 'T') }}
+        <span class="date">
+          <i class="ti ti-calendar-month"></i>
+          {{ date.toFormat(date.now, 'LLL dd') }}
+        </span>
+        <span class="time">
+          <i class="ti ti-clock"></i>
+          {{ date.toFormat(date.now, 'T') }}
+        </span>
