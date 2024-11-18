@@ -154,7 +154,7 @@ window_rules:
   - commands: [" move --workspace 2"]
     match:
       - window_process: { equals: 'Discord' }
-      - window_process: { equals: 'Sticky Notes' }
+      - window_title: { equals: 'Sticky Notes' } # sticky notes
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -264,7 +264,7 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec cmd']
+  - commands: ['shell-exec wt']
     bindings: ['alt+enter']
 
   # Focus the next/previous workspace defined in `workspaces` config.
