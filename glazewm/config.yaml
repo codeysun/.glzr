@@ -82,7 +82,7 @@ window_effects:
     # ** Exclusive to Windows 11 due to API limitations.
     border:
       enabled: true
-      color: *rp-foam
+      color: *rp-rose
 
   # Visual effects to apply to non-focused windows.
   other_windows:
@@ -144,7 +144,7 @@ window_rules:
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
-        window_class: { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
+        # window_class: { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
 
       # Ignore rules for various 3rd-party apps.
       - window_process: { equals: 'PowerToys.PowerAccent' }
@@ -239,7 +239,7 @@ keybindings:
 
   # Change the focused window to be fullscreen.
   - commands: ['toggle-fullscreen']
-    bindings: ['alt+x']
+    bindings: ['alt+f']
 
   # Minimize focused window.
   - commands: ['toggle-minimized']
@@ -303,10 +303,10 @@ keybindings:
     bindings: ['alt+s']
   - commands: ['move-workspace --direction right']
     bindings: ['alt+g']
-  - commands: ['move-workspace --direction up']
-    bindings: ['alt+d']
-  - commands: ['move-workspace --direction down']
-    bindings: ['alt+f']
+  # - commands: ['move-workspace --direction up']
+  #   bindings: ['alt+d']
+  # - commands: ['move-workspace --direction down']
+  #   bindings: ['alt+f']
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ['move --workspace 1', 'focus --workspace 1']
