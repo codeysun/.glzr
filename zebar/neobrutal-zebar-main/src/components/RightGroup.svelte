@@ -1,20 +1,21 @@
 <script lang="ts">
-  import type { DateOutput, GlazeWmOutput, NetworkOutput, WeatherOutput } from "zebar";
+  import type { DateOutput, GlazeWmOutput, NetworkOutput, WeatherOutput, MediaOutput } from "zebar";
   import NowPlaying from "./NowPlaying.svelte";
 
   type RightGroupProps = {
     date: DateOutput;
     time: DateOutput;
     glazewm: GlazeWmOutput;
+    media: MediaOutput;
     network: NetworkOutput;
     weather: WeatherOutput;
   };
 
-  let { date, time, glazewm, network, weather }: RightGroupProps = $props();
+  let { date, time, glazewm, media, network, weather }: RightGroupProps = $props();
 </script>
 
 <div class="flex flex-row gap-6 items-center">
-  <NowPlaying glazewm={glazewm}/>
+  <NowPlaying glazewm={glazewm} media={media}/>
   <div class="flex flex-row items-center gap-1">
     {#if network?.defaultInterface?.type === "ethernet"}
       <i class="nf nf-md-ethernet_cable"></i>

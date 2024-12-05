@@ -5,6 +5,7 @@
     BatteryOutput,
     CpuOutput,
     GlazeWmOutput,
+    MediaOutput,
     MemoryOutput,
     DateOutput,
     NetworkOutput,
@@ -22,6 +23,7 @@
   let date = $state<DateOutput | null>();
   let time = $state<DateOutput | null>();
   let glazewm = $state<GlazeWmOutput | null>();
+  let media = $state<MediaOutput | null>();
   let memory = $state<MemoryOutput | null>();
   let network = $state<NetworkOutput | null>();
   let weather = $state<WeatherOutput | null>();
@@ -33,6 +35,7 @@
       time: { type: "date", formatting: "T" },
       date: { type: "date", formatting: "LLL dd" },
       glazewm: { type: "glazewm" },
+      media: { type: "media" },
       memory: { type: "memory" },
       network: { type: "network" },
       weather: { type: "weather" }
@@ -44,6 +47,7 @@
       date = providers.outputMap.date;
       time = providers.outputMap.time;
       glazewm = providers.outputMap.glazewm;
+      media = providers.outputMap.media;
       memory = providers.outputMap.memory;
       network = providers.outputMap.network;
       weather = providers.outputMap.weather;
@@ -65,6 +69,7 @@
       date={date!}
       time={time!}
       glazewm={glazewm!}
+      media={media!}
       network={network!}
       weather={weather!}
     />
