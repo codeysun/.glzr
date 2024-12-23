@@ -29,7 +29,7 @@
       {:else}
         <i class="ti ti-wifi-off"></i>
       {/if}
-      {network.defaultGateway?.ssid}
+      <!-- {network.defaultGateway?.ssid} -->
     {:else}
       <i class="ti ti-wifi-off"></i>
     {/if}
